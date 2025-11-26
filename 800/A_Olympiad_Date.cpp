@@ -1,0 +1,34 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+typedef long long ll;
+#define endl '\n'
+#define optimize() ios::sync_with_stdio(false); cin.tie(nullptr);
+
+int main()
+{
+    int test;
+    cin >> test;
+    while (test--) 
+    {
+        int size, ans = 0;
+        cin >> size;
+        vector<int> vec(size);
+        for (int &x : vec) cin >> x;
+
+        map<int, int> freq;
+        for (int i = 0; i < size && ans == 0; i++)
+        {
+            freq[vec[i]]++;
+            if (freq[0] >= 3 && 
+                freq[1] >= 1 && 
+                freq[2] >= 2 && 
+                freq[3] >= 1 && 
+                freq[5] >= 1)
+                ans = i + 1;
+        }
+        cout << ans << endl;
+    }
+
+    return 0;
+}
