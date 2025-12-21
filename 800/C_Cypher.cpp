@@ -21,9 +21,8 @@ int main()
         for (int x : vec)
         {
             int val;
-            cin >> val;
             string change;
-            cin >> change;
+            cin >> val >> change;
             for (char ch : change) x = (x + (ch == 'D' ? 1 : -1) + 10) % 10;
             cout << x << " ";
         }     
